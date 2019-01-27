@@ -7,36 +7,49 @@ runtime ftplugin/man.vim
 ```
 # Moving around
 
-## e and E
+## `e` and `E`
 
 * `e` move to the end of a word
 * `E` move to the end of a word (any non-whitespace characters)
 
 Suppose the cursor is at the beginning of `std::cout <<`. `e` stops at `d` and `E` stops at `t`.
 
-## w and W
+## `w` and `W`
 
 * `w` move forward to the beginning of a word
 * `W` move forward a word (any non-whitespace characters)
 
 Suppose the cursor is at the beginning of `std::cout <<`. `w` stops at `:` and `W` stops at `<`.
 
-## b and B
+## `b` and `B`
 
 * `b` move backward to the beginning of a word
 * `B` move backward to the beginning of a word (any non-whitespace characters)
 
-## 0 and ^ and $
+## `0` and `^` and `$`
 
 * `0` Move to the beginning o a line
 * `^` Move to the first non-blank character of the line
 * `$` Move to the end of the line
 
-## H and M and L
+## `H` and `M` and `L`
 * `H` jump to the top of screen
 * `M` jump to the middle of screen 
 * `L` jump to the bottom of screen
 
+## `CTRL+u` and `CTRL+d` and `CTRL+f` and `CTRL+b`
+
+* `CTRL+d` move 16 lines down
+* `CTRL+u` move 16 lines up
+* `CTRL+f` move one page down
+* `CTRL+b` move one page up
+
+## `z+enter` and `z+.` and `z+-`
+
+* `z+enter` move the current line to the top of screen
+* `z+.` move the current line to the middle of screen
+* `z+-` move the current line to the bottom of screen
+* `50z+enter` makes the top of screen starts at line 50
 
 
 # Book Review

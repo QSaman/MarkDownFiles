@@ -32,7 +32,7 @@ Suppose the cursor is at the beginning of `std::cout <<`. `w` stops at `:` and `
 * `^` Move to the first non-blank character of the line
 * `$` Move to the end of the line
 
-## `H` and `M` and `L`
+## `H` (Home)  and `M` (Middle) and `L` (Last)
 * `H` jump to the top of screen
 * `M` jump to the middle of screen 
 * `L` jump to the bottom of screen
@@ -125,3 +125,10 @@ q
 :Ack -w -i --ignore-dir=build -w  \"gui\"
 ```
 `-w` means search for the whole word, `-i` means ignore case sensitivity.
+
+# Plugins
+
+## YouCompleteMe
+
+* Press `\d` to see error detail
+* If you see literal strings are highlighted. It is likely that you ran `set spell`. The solution is `set nospell`.

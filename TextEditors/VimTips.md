@@ -51,6 +51,27 @@ Suppose the cursor is at the beginning of `std::cout <<`. `w` stops at `:` and `
 * `z+-` move the current line to the bottom of screen
 * `50z+enter` makes the top of screen starts at line 50
 
+# Clipboard Access in Terminal
+
+You can run the following command to figure out if it's available:
+
+```
+vim --version | grep clipboard
+```
+
+Inside Vim you can run `:echo has('clipboard')` to see if it's available. Most Linux distros ship with a "minimal" Vim build by default which doesn't have `+clipboard`. but you can usually install it:
+
+## Fedora
+
+Install `vim-x11` and run `vimx` instead of `vim`. You can add the following line to your `~/.bashrc`:
+
+```
+alias vim='vimx'
+```
+## Debian and Ubuntu
+
+Install `vim-gtk` or `vim-gnome`.
+
 
 # Book Review
 

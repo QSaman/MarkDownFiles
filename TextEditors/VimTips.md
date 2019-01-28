@@ -5,7 +5,10 @@ Add the following line to your `~/.vimrc` to access `man` in Vim. For example `:
 ```
 runtime ftplugin/man.vim
 ```
+
 # Moving around
+
+For more information in Vim type `:h motion.txt`
 
 ## `e` and `E`
 
@@ -25,6 +28,11 @@ Suppose the cursor is at the beginning of `std::cout <<`. `w` stops at `:` and `
 
 * `b` move backward to the beginning of a word
 * `B` move backward to the beginning of a word (any non-whitespace characters)
+
+## `ge` and `gE`
+
+* `ge` move backward to the end of a word
+* `gE` move backward to the end of a word (any non-whitespace characters)
 
 ## `0` and `^` and `$`
 
@@ -72,6 +80,16 @@ alias vim='vimx'
 
 Install `vim-gtk` or `vim-gnome`.
 
+
+# Copy and pasting
+
+## Pasting from OS Clipboard
+
+When you are in `insert mode` press `CTRL-R *` or `CTRL-R +` for pasting from OS clipboard. 
+
+## Fast Paste
+
+You can quickly exit `insert mode` for a single `normal mode` operation with `CTRL-o`. For example if you are in `insert mode` and want to quickly paste, you can press `CTRL-o p`
 
 # Book Review
 

@@ -91,6 +91,10 @@ When you are in `insert mode` press `CTRL-R *` or `CTRL-R +` for pasting from OS
 
 You can quickly exit `insert mode` for a single `normal mode` operation with `CTRL-o`. For example if you are in `insert mode` and want to quickly paste, you can press `CTRL-o p`
 
+# Vim Registers
+
+For more information type `:h registers` in Vim.
+
 # Book Review
 
 ## Group 1:

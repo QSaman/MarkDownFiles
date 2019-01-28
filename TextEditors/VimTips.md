@@ -1,10 +1,13 @@
 # Tips
 
-Add the following line to your `~/.vimrc` to access `man` in Vim. For example `:Man mpv`
+* Add the following line to your `~/.vimrc` to access `man` in Vim. For example `:Man mpv`
 
 ```
 runtime ftplugin/man.vim
 ```
+
+* When you are in `command mode` (using `:`) enter `CTRL-f` to open command-line window.
+* You can yank in `command mode`. For example `:%y 0` copy the entire buffer into `0` register
 
 # Search tips
 

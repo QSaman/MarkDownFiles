@@ -6,6 +6,10 @@ Add the following line to your `~/.vimrc` to access `man` in Vim. For example `:
 runtime ftplugin/man.vim
 ```
 
+# Search tips
+
+* If you want to disable highlighted search text, run `:nohls` or `:nohlsearch`.
+
 # Moving around
 
 For more information in Vim type `:h motion.txt`

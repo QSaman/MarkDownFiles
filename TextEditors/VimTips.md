@@ -85,7 +85,7 @@ Install `vim-gtk` or `vim-gnome`.
 
 ## Pasting from OS Clipboard
 
-When you are in `insert mode` press `CTRL-R *` or `CTRL-R +` for pasting from OS clipboard. 
+When you are in `insert mode` or `command mode` press `CTRL-r *` or `CTRL-r +` for pasting from OS clipboard. Of course you can also use Vim registers (e.g. `CTRL-r a`)
 
 ## Fast Paste
 
@@ -94,6 +94,175 @@ You can quickly exit `insert mode` for a single `normal mode` operation with `CT
 # Vim Registers
 
 For more information type `:h registers` in Vim.
+
+## See the content of all registers
+
+Type `:reg` in Vim. If you only want to see the content of registers a, b and c you must run `:reg a b c` in Vim.
+
+## Numbered Registers
+
+Vim store the content of last yanked text (copied text) into `0` register (you can access it by `"0`). Vim uses registers `1` to `9` to store the last deleted operation. `1` have the most recent one and `9` has the oldest one. Suppose we have a file with the following content:
+
+```
+line 1
+line 2
+line 3
+line 4
+line 5
+line 6
+line 7
+line 8
+line 9
+yanked text
+```
+We yanked the last line (yanked text) and then delete other lines starting with "line 1" (the last deleted line will be "line 9"). The content of registers are:
+
+```
+"" line 9
+"0 yanked text
+"1 line 9
+"2 line 8
+"3 line 7
+"4 line 6
+"5 line 5
+"6 line 4
+"7 line 3
+"8 line 2
+"9 line 1
+```
+
+## Modifying the content of a register
+
+Suppose you yanked a text (as you know it stored in `0` register). You can modify `0` register before pasting by running the following command: `:let @0='CTRL-r 0'`. Then the content of `0` register appears and you can modify it.
+
+## Read-only Registers
+
+### `.` register
+
+It has the content of last inserted text. For example suppose we enter these two sentences and then delete the last sentence:
+
+```
+The Sith rely on their passion for their strength. They think inward only about themsevles.
+```
+
+So before exiting the `insert mode` the content is:
+
+```
+The Sith rely on their passion for their strength.
+```
+The content of `".` register is:
+
+```
+The Sith rely on their passion for their strength. They think inward only about themsevles.<80>kb<80>kb<80>kb<80>kb<80>kb<80>kb<80>kb<80>kb<80>kb<80>kb<80>kb<80>kb
+```
+As you can see we have two sentences plus backspace characters to delete the second one.
+
+### `%` register
+
+It has the current file address. Suppose we want to copy the current file path to OS clipboard. We need to run `:let @+=@%`.
+
+
+### `:` register
+
+It has the content of last executed command. In command mode you can run `:@:` to rerun the last command.
+
+### `=` register
+
+The expression register is used to deal with result of expressions. For example if you are in `insert mode` and you type `CTRL-r =` you will see a `=` sign in the command line. Then you type `2+4*3<enter>`, 14 will be inserted
+
+### `/` register
+
+The search register has the content of the last search.
+
+
+# Macros
+
+Type `:recording` for more information.
+
+## Run a macro from clipboard
+
+Suppose you copied the content of a macro in OS clipboard. You can run it by `@+`. For example copy "iVim is awesome" into your OS clipboard and then in `normal mode` enter `@+`.
+
+# Book Review
+
+## Group 1:
+```
+i, I
+a, A
+s, S
+```        
+## Group 2:
+```
+r, R
+c, C, cc
+d, dd, D
+```
+---
+
+* `f[char], F[char], t[char], T[char]` page 1
+* `2f, 20k`
+* `CTRL-G` p19
+* `CTRL-D, CTRL-U` p20
+* `d3$, 3dd`
+* `3d2w p21`
+* `cc C` p22
+* `D`
+* p22 (The `.` command repeats the last change. A change, in this context, is inserting, deleting or replacing text)  
+
+ ## Deleting an HTML tag  
+
+You position the cursor on the first `<` and delete the `<B>` with the command `df>`.
+
+---
+* `J` p23
+* `r` and `s`
+* `5r*` p23
+* `5r<ENTER>` p23
+* `~, 2~` p24
+## p24 Keyboard Macros
+`qa <some actions> q`. For using macro three times: `3@a`.
+* [Repeat macro recursively](http://vim.wikia.com/wiki/Record_a_recursive_macro):
+```
+qqq
+qq
+Commands you want to record
+@q
+q
+@q
+```     
+* *digraphs:* for example type `CTRL-kCo` for copyright sign
+* In search patterns, `"foobeep\&...beep"` matches `foobeep`. `foobeep\&..."` matches `"foo"` in `"foobeep`. see :h pattern
+* `:set hlsearch`. `:nohlsearch`. :set `incsearch` p29
+* `/` and `?` and `n` and `N` and `/<ENTER>` and `?<ENTER>`
+* `/^$ p33`
+* `/. p33`
+24. **IMPORTANT** see `:h magic`. if you use `"/\V<pattern>"`, you only need to escape `'/'` and `'\'` character with `\` (e.g. `/\V\/` and `/\V\\`) in `<pattern>`; but if you use `"?\V<pattern>"` you only need to escape `'\'` with `'\'` (e.g. `?\V\\`) in `<pattern>`
+* `:g/^#/d` Delete all lines that begin with `'#'` character. For more information see this [page](http://vim.wikia.com/wiki/Delete_all_lines_containing_a_pattern)
+* `:for i in range(1, 12) | put = printf('%d.', i) | endfor`
+
+
+# Programming Tips (visit this [site](http://www.moolenaar.net/habits.html))
+
+* Use `%` to jump from an open brace to its matching closing brace. Or from a `"#if"` to the matching `"#endif"`. Actually, `%` can jump to many different matching items. It is very useful to check `if ()` and `{}` constructs are balanced properly.
+* Use `[{` to jump back to the `"{"` at the start of the current code block.
+* Use `gd` to jump from the use of a variable to its local declaration.
+* Vim has a completion mechanism that makes this a whole lot easier. It looks up words in the file you are editing, and also in #include'd files. You can type `"XpmCr"`, then hit `CTRL-N` and Vim will expand it to
+* ":abbr Lunix Linux" The words will be automatically corrected just after you typed them.
+# Tips
+
+* If you are using [Ack](https://github.com/mileszs/ack.vim) plugin, you can use the following command:
+
+```
+:Ack -w -i --ignore-dir=build -w  \"gui\"
+```
+`-w` means search for the whole word, `-i` means ignore case sensitivity.
+
+# Plugins
+
+## YouCompleteMe
+
+* Press `\d` to see error detail
+* If you see literal strings are highlighted. It is likely that you ran `set spell`. The solution is `set nospell`.
 
 # Book Review
 

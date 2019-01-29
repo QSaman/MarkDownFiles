@@ -190,6 +190,57 @@ Type `:recording` for more information.
 
 Suppose you copied the content of a macro in OS clipboard. You can run it by `@+`. For example copy "iVim is awesome" into your OS clipboard and then in `normal mode` enter `@+`.
 
+# Windows
+
+For more information run `:h windows.txt`.
+
+# Splitting Window
+
+## Horizontal Splitting
+
+* By pressing `CTRL-w s` `in normal mode`
+* By running `:split` in `command mode`
+
+## Vertical Splitting
+
+* By pressing `CTRL-w v` in `normal mode`
+* By running `:vsplit` in `command mode`
+
+# Closing a Window
+
+* By pressing `CTRL-w q` in `normal mode`
+* By running `:q` in `command mode`
+
+# Moving to the top-left window
+
+Press `CTRL-w t` in `normal mode`
+
+# Moving to the bottom-right window
+
+Press `CTRL-w b` in `normal mode`
+
+# Changing the Layout of Windows
+
+## `CTRL-w K`
+
+Note that `K` is uppercase. Move the current window to be at the very top, using the full width of screen. In other words if we have two vertically-splitted Windows, this command makes them horizontally splitted.
+
+## `CTRL-w J`
+
+Note that `J` is uppercase. Move the current window to be at the very bottom, using the full width of screen. In other words if we have two vertically-splitted Windows, this command makes them horizontally splitted.
+
+## `CTRL-w H`
+
+Move the current window to be at the far left, using the full height of the screen. In other words if we have two horizontally-splitted windows, this command makes them vertically splitted.
+
+## `CTRL-w L`
+
+Move the current window to be at the far right, using the full height of the screen. In other words if we have two horizontally-splitted windows, this command makes them vertically splitted.
+
+## `CTRL-w T`
+
+If we have more than one window in the current tab, moves the current window to a new tab.
+
 # Book Review
 
 ## Group 1:

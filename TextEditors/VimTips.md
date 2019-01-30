@@ -194,52 +194,72 @@ Suppose you copied the content of a macro in OS clipboard. You can run it by `@+
 
 For more information run `:h windows.txt`.
 
-# Splitting Window
+## Splitting Window
 
-## Horizontal Splitting
+### Horizontal Splitting
 
 * By pressing `CTRL-w s` `in normal mode`
 * By running `:split` in `command mode`
 
-## Vertical Splitting
+### Vertical Splitting
 
 * By pressing `CTRL-w v` in `normal mode`
 * By running `:vsplit` in `command mode`
 
-# Closing a Window
+## Closing a Window
 
 * By pressing `CTRL-w q` in `normal mode`
 * By running `:q` in `command mode`
 
-# Moving to the top-left window
+## New Window
+
+You can create a new window using `:new` which will be opened horizontally or `:vnew` which will be opened vertically
+
+## Moving to the top-left window
 
 Press `CTRL-w t` in `normal mode`
 
-# Moving to the bottom-right window
+## Moving to the bottom-right window
 
 Press `CTRL-w b` in `normal mode`
 
-# Changing the Layout of Windows
+## Changing the Layout of Windows
 
-## `CTRL-w K`
+### `CTRL-w K`
 
 Note that `K` is uppercase. Move the current window to be at the very top, using the full width of screen. In other words if we have two vertically-splitted Windows, this command makes them horizontally splitted.
 
-## `CTRL-w J`
+### `CTRL-w J`
 
 Note that `J` is uppercase. Move the current window to be at the very bottom, using the full width of screen. In other words if we have two vertically-splitted Windows, this command makes them horizontally splitted.
 
-## `CTRL-w H`
+### `CTRL-w H`
 
 Move the current window to be at the far left, using the full height of the screen. In other words if we have two horizontally-splitted windows, this command makes them vertically splitted.
 
-## `CTRL-w L`
+### `CTRL-w L`
 
 Move the current window to be at the far right, using the full height of the screen. In other words if we have two horizontally-splitted windows, this command makes them vertically splitted.
 
-## `CTRL-w T`
+### `CTRL-w T`
 
 If we have more than one window in the current tab, moves the current window to a new tab.
+
+## `CTRL-w o`
+
+Make the current window the only one on the screen. All other windows are closed.
+
+
+# Buffers
+
+Use `:buffers` or `:ls` to see the list of buffers. For example if you have multiple windows and you press `CTRL-w o` to close all windows except the current one, Vim add all the closed ones to buffer list. You can reopen them using `:buffer`. The argument is buffer number or buffer name. You can also open a buffer using `N CTRL-^` which `N` is buffer number.
+
+# Search in files
+
+For more information type `:h vimgrep`. 
+
+For example you can type `:vimgrep /while/ **/*.cpp` to search for `while` recursively (`**` means search recursively). To see the file list type `:copen`.
+
 
 # Book Review
 

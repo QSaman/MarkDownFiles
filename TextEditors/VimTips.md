@@ -13,6 +13,16 @@ runtime ftplugin/man.vim
 
 * If you want to disable highlighted search text, run `:nohls` or `:nohlsearch`.
 
+## Searching in multiple files
+
+You can use `ack` or `ag` without a plugin. The author of the latter claims that it's faster. To run `ag` and fetching its output in `QuickFix` list you can run:
+
+```
+:cexpr system('ag search_keyword')
+```
+
+After that you can run `:copen` to see the output in `QuickFix` list. If you press `enter` key on any file, it will be opened in a new window. If you want to add more result to the same `QuickFix` list, you can run `:caddexpr system('ag search_keyword_2`)`.
+
 # Moving around
 
 For more information in Vim type `:h motion.txt`

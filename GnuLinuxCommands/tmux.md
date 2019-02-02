@@ -14,3 +14,4 @@ You can connect to the same session but it acts as a mirror. A better approach i
 tmux new -s left_monitor
 tmux new -t left_monitor -s right_monitor
 ```
+Now you have two different sessions (in this case `left_monitor` and `right_monitor`) that shares windows together.

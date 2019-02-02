@@ -8,6 +8,7 @@ runtime ftplugin/man.vim
 
 * When you are in `command mode` (using `:`) enter `CTRL-f` to open command-line window.
 * You can yank in `command mode`. For example `:%y 0` copy the entire buffer into `0` register
+* You can open a terminal in Vim by running `:terminal`.
 
 # Search tips
 
@@ -15,7 +16,7 @@ runtime ftplugin/man.vim
 
 ## Searching in multiple files
 
-You can use [ack] (https://github.com/beyondgrep/ack2) or [ag] (https://github.com/ggreer/the_silver_searcher) without a plugin. The author of the latter claims that it's faster. To run `ag` and fetching its output in `QuickFix` list you can run:
+You can use [ack](https://github.com/beyondgrep/ack2) or [ag](https://github.com/ggreer/the_silver_searcher) without a plugin. The author of the latter claims that it's faster. To run `ag` and fetching its output in `QuickFix` list you can run:
 
 ```
 :cexpr system('ag search_keyword')

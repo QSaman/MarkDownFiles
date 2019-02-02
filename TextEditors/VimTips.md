@@ -15,7 +15,7 @@ runtime ftplugin/man.vim
 
 ## Searching in multiple files
 
-You can use `ack` or `ag` without a plugin. The author of the latter claims that it's faster. To run `ag` and fetching its output in `QuickFix` list you can run:
+You can use `[ack] (https://github.com/beyondgrep/ack2)` or `[ag] (https://github.com/ggreer/the_silver_searcher)` without a plugin. The author of the latter claims that it's faster. To run `ag` and fetching its output in `QuickFix` list you can run:
 
 ```
 :cexpr system('ag search_keyword')

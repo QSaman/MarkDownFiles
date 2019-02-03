@@ -2,7 +2,7 @@
 
 Note that private and public keys don't have expiry date; only certificates have. Usually certificates are in X.509.
 
-# Check Certificate Expiry Date
+## Check Certificate Expiry Date
 
 You can open certificate  file (the extension can be `crt`, `pem`, ...)  with a text editor or running the following command to see its expiry date:
 
@@ -16,7 +16,7 @@ For printing both start and  end date:
 openssl x509  -startdate -enddate -noout -in file.crt
 ```
 
-# CRL Text Format
+## CRL Text Format
  
 If you want to see a CRL file (certificate revocation list) in text format and see its expiry date you must run the following command:
 

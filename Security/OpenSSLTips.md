@@ -45,6 +45,4 @@ If you don't want to see the actual CRL, use the following command:
 openssl crl -text -noout -in crl.pem
 ```
 
-```
-
 For more information run `man openssl-crl` or `openssl crl -help`.

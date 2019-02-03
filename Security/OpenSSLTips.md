@@ -16,6 +16,12 @@ For printing both start and  end date:
 openssl x509  -startdate -enddate -noout -in file.crt
 ```
 
+or you can use the following command:
+
+```
+openssl x509 -dates -noout -in file.crt
+```
+
 For more information run `man openssl-x509` or `openssl x509 -help`.
 
 ## CRL Text Format

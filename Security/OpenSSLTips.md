@@ -1,6 +1,6 @@
 # Checking for Expiry Date
 
-Note that private and public keys don't have expiry date; only certificates have. Usually certificates are in X.509.
+Note that private and public keys don't have expiry date; only certificates have. Usually certificates are in X.509. An X.509 certificate contains a public key and an identity (a hostname, or an organization, or an individual), and is either signed by a certificate authority or self-signed.
 
 ## Check Certificate Expiry Date
 

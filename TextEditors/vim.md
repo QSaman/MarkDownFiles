@@ -12,7 +12,7 @@ runtime ftplugin/man.vim
 
 # Search tips
 
-If you want to disable highlighted search text, run `:nohls` or `:nohlsearch`. If you try to search for a new word, it will not be highlighted so you should  enable it by running `hls` or `hlsearch`. A better approach is to empty search register by running `:let @/=''` without touching the highlight variable.
+If you want to disable highlighted search text, run `:nohls` or `:nohlsearch`. If you try to search for a new word, it will not be highlighted so you should  enable it by running `:hls` or `:hlsearch`. A better approach is to empty search register by running `:let @/=''` without touching the highlight variable.
 
 ## Searching in multiple files
 

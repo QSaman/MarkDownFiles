@@ -26,15 +26,25 @@ For more information run `man openssl-x509` or `openssl x509 -help`.
 
 ## CRL Text Format
  
-If you want to see a CRL file (certificate revocation list) in text format and see its expiry date you must run the following command:
+If you want to see a CRL file (certificate revocation list) `last update` and `next update` (expiry date), you can run:
 
 ```
-openssl crl -text -in crl.pem 
+openssl crl -lastupdate -nextupdate -noout -in crl.key
+
 ```
+
+If you want to see its text version:
+
+```
+openssl crl -text -in crl.pem
+```
+
 If you don't want to see the actual CRL, use the following command:
 
 ```
 openssl crl -text -noout -in crl.pem
+```
+
 ```
 
 For more information run `man openssl-crl` or `openssl crl -help`.

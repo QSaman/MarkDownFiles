@@ -16,6 +16,8 @@ For printing both start and  end date:
 openssl x509  -startdate -enddate -noout -in file.crt
 ```
 
+For more information run `man openssl-x509` or `openssl x509 -help`.
+
 ## CRL Text Format
  
 If you want to see a CRL file (certificate revocation list) in text format and see its expiry date you must run the following command:
@@ -28,3 +30,5 @@ If you don't want to see the actual CRL, use the following command:
 ```
 openssl crl -text -noout -in crl.pem
 ```
+
+For more information run `man openssl-crl` or `openssl crl -help`.

@@ -22,7 +22,11 @@ You can use [ack](https://github.com/beyondgrep/ack2) or [ag](https://github.com
 :cexpr system('ag search_keyword')
 ```
 
-After that you can run `:copen` to see the output in `QuickFix` list. If you press `enter` key on any file, it will be opened in a new window. If you want to add more result to the same `QuickFix` list, you can run `:caddexpr system('ag search_keyword_2`)`.
+After that you can run `:copen` to see the output in `QuickFix` list. If you press `enter` key on any file, it will be opened in a new window. If you want to add more result to the same `QuickFix` list, you can run `:caddexpr system('ag search_keyword_2`)`. If you are searching for special characters you can use the following command (note that the dot means concatenation):
+
+```
+:cexpr system('ag ' . shellescape("1'000'000"))
+```
 
 # Moving around
 

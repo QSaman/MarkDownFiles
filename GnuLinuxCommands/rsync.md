@@ -26,14 +26,15 @@ You can use `-n` or `--dry-run` flag to perform a trial run with no changes made
 
 # Updating Extended attributes
 
-If you want to preserve extended attributes you can use `-X` or `--xattrs` flag.
+If you want to preserve extended attributes you can use `-X` or `--xattrs` flag. If you want to preserve extended attributes in NTFS, use `--fake-super` to avoid rsync from hanging.
 
 # Backup a Directory Regularly
 
 I usually use the following command to backup my data directory:
 
 ```
-rsync -aX --delete --progress --exclude-from=./exclude-NixData --delete-excluded /path/to/data /path/to/backup 
+rsync -aAX --delete --progress --fake-super --exclude-from=./exclude-NixData --delete-excluded /path/to/data /path/to/backup 
+rsync -aAX   --fake-super --progress source dest
 
 ```
 

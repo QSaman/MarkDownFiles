@@ -1,3 +1,3 @@
 # Useful Kodi Addons
 ## Subtitle
-* opensubtitle
+* [opensubtitle](https://github.com/opensubtitles/service.subtitles.opensubtitles_by_opensubtitles)

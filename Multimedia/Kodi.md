@@ -7,6 +7,7 @@
 
 ## Program
 * [Yatse](https://yatse.tv/wiki/yatse-kodi-addon)
+* ResolveURL Tester
 * Trakt
 * Git Browser Tool
 

@@ -6,6 +6,7 @@
 * Universal Movie Scraper
 
 ## Program
+* [Yatse](https://yatse.tv/wiki/yatse-kodi-addon)
 * Trakt
 * Git Browser Tool
 

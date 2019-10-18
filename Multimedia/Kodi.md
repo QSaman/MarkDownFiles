@@ -11,3 +11,6 @@
 * Trakt
 * Git Browser Tool
 
+## PVR
+* [IPTV Simple Client](https://kodi.wiki/view/Add-on:IPTV_Simple_Client)
+

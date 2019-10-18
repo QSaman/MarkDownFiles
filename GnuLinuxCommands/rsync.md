@@ -35,6 +35,15 @@ I usually use the following command to backup my data directory:
 ```
 rsync -aAX --delete --progress --fake-super --exclude-from=./exclude-NixData --delete-excluded /path/to/data /path/to/backup 
 rsync -aAX --fake-super --progress source dest
+```
+If you want the remove the source files after synching, you can use the following command:
 
+```
+rsync -aAX --fake-super --remove-source-files --progress source dest
+```
+Note the the above command only removes files and not directories. To remove empty directories run the following command:
+
+```
+find -type d -empty -delete
 ```
 

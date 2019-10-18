@@ -34,7 +34,7 @@ I usually use the following command to backup my data directory:
 
 ```
 rsync -aAX --delete --progress --fake-super --exclude-from=./exclude-NixData --delete-excluded /path/to/data /path/to/backup 
-rsync -aAX   --fake-super --progress source dest
+rsync -aAX --fake-super --progress source dest
 
 ```
 

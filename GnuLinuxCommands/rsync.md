@@ -33,13 +33,16 @@ If you want to preserve extended attributes you can use `-X` or `--xattrs` flag.
 I usually use the following command to backup my data directory:
 
 ```
-rsync -aAX --delete --progress --fake-super --exclude-from=./exclude-NixData --delete-excluded /path/to/data /path/to/backup 
-rsync -aAX --fake-super --progress source dest
+rsync -aAX --delete --progress --exclude-from=./exclude-NixData --delete-excluded /path/to/data /path/to/backup 
+rsync -aAX --progress source dest
 ```
+
+If the target's file system is NTFS, use `--fake-super`.
+
 If you want the remove the source files after synching, you can use the following command:
 
 ```
-rsync -aAX --fake-super --remove-source-files --progress source dest
+rsync -aAX --remove-source-files --progress source dest
 ```
 Note the the above command only removes files and not directories. To remove empty directories run the following command:
 

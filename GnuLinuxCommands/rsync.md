@@ -52,10 +52,10 @@ find -type d -empty -delete
 
 # Run rsync with lower priority
 
-You can use `nice` command to give lower priority to `rsync`. You can assign from -20 (most favorable to the process) to 19 (least favorable to the process):
+You can use `nice` and `ionice` commands to give lower priority to `rsync`. You can assign from -20 (most favorable to the process) to 19 (least favorable to the process) to nice.:
 
 ```
-nice -n 19 rsync -aAX --progress source dest
+nice -n 19 ionice -c 3 rsync -aAX --progress source dest
 
 ```
 

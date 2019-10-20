@@ -50,3 +50,12 @@ Note the the above command only removes files and not directories. To remove emp
 find -type d -empty -delete
 ```
 
+# Run rsync with lower priority
+
+You can use `nice` command to give lower priority to `rsync`. You can assign from -20 (most favorable to the process) to 19 (least favorable to the process):
+
+```
+nice -n 19 rsync -aAX --progress source dest
+
+```
+

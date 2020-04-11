@@ -1,10 +1,17 @@
 # Interactive mode
-You can run `bc -i` to run in interactive mode:
+You can run `bc -i` or `bc` to run in interactive mode:
 
 ```
-bc -i
+$ bc -i
 2 * 3
 6
+quit
+
+$ bc
+2^3; 2^4
+8
+16
+quit
 ```
  
 # Base conversion

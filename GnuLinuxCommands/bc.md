@@ -11,7 +11,7 @@ $ bc
 2^3; 2^4
 8
 16
-quit
+CTRL+D
 ```
  
 # Base conversion

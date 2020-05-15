@@ -54,3 +54,37 @@ $ date +%Z
 EDT
 ```
 
+# zdump
+
+* See when EST or EDT is effective in `America/Montreal`:
+
+```
+$ zdump -v /usr/share/zoneinfo/America/Montreal | tail
+/usr/share/zoneinfo/America/Montreal  Sun Mar  9 06:59:59 2498 UT = Sun Mar  9 01:59:59 2498 EST isdst=0 gmtoff=-18000
+/usr/share/zoneinfo/America/Montreal  Sun Mar  9 07:00:00 2498 UT = Sun Mar  9 03:00:00 2498 EDT isdst=1 gmtoff=-14400
+/usr/share/zoneinfo/America/Montreal  Sun Nov  2 05:59:59 2498 UT = Sun Nov  2 01:59:59 2498 EDT isdst=1 gmtoff=-14400
+/usr/share/zoneinfo/America/Montreal  Sun Nov  2 06:00:00 2498 UT = Sun Nov  2 01:00:00 2498 EST isdst=0 gmtoff=-18000
+/usr/share/zoneinfo/America/Montreal  Sun Mar  8 06:59:59 2499 UT = Sun Mar  8 01:59:59 2499 EST isdst=0 gmtoff=-18000
+/usr/share/zoneinfo/America/Montreal  Sun Mar  8 07:00:00 2499 UT = Sun Mar  8 03:00:00 2499 EDT isdst=1 gmtoff=-14400
+/usr/share/zoneinfo/America/Montreal  Sun Nov  1 05:59:59 2499 UT = Sun Nov  1 01:59:59 2499 EDT isdst=1 gmtoff=-14400
+/usr/share/zoneinfo/America/Montreal  Sun Nov  1 06:00:00 2499 UT = Sun Nov  1 01:00:00 2499 EST isdst=0 gmtoff=-18000
+/usr/share/zoneinfo/America/Montreal  9223372036854689407 = NULL
+/usr/share/zoneinfo/America/Montreal  9223372036854775807 = NULL
+```
+
+* Print the local time using zdump
+
+```
+$ zdump /etc/localtime 
+/etc/localtime  Thu May 14 22:46:21 2020 EDT
+```
+
+* Print time in different cities:
+
+```
+$ zdump /usr/share/zoneinfo/*/* | grep -E "Montreal|Tehran|Vancouver|London"
+/usr/share/zoneinfo/America/Montreal           Thu May 14 22:49:38 2020 EDT
+/usr/share/zoneinfo/America/Vancouver          Thu May 14 19:49:38 2020 PDT
+/usr/share/zoneinfo/Asia/Tehran                Fri May 15 07:19:38 2020 +0430
+/usr/share/zoneinfo/Europe/London              Fri May 15 03:49:38 2020 BST
+```

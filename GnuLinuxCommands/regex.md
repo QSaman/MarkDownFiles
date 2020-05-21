@@ -11,11 +11,13 @@ $ echo "38=2;150=Grep me if you can;40=1;" | grep -oE "150=.+;"
 ```
 # Lookaround
 
-lookaround actually matches characters, but then gives up the match, returning only the result: match or no match.They do not consume characters in the string, but only assert whether a match is possible or not. For more information visit this [website](https://www.regular-expressions.info/lookaround.html)
+lookaround actually matches characters, but then gives up the match, returning only the result: match or no match.They do not consume characters in the string, but only assert whether a match is possible or not. For more information visit this [website](https://www.regular-expressions.info/lookaround.html).
+
+If you want to use lookaround with `grep` you need to enable Perl regex by using `grep -P`.
+
 
 ## Lookahead
 
-If you want to use lookahead with `grep` you need to enable Perl regex by using `grep -P`.
 
 ### Negative Lookahead
 

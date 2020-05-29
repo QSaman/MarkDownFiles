@@ -13,6 +13,16 @@ $ bc
 16
 CTRL+D
 ```
+
+# Using Previous Result
+
+```
+$ bc -i
+2 + 2
+4
+. * 2
+8
+```
  
 # Base conversion
 
